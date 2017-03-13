@@ -21,6 +21,30 @@
         <li class="list-group-item">Chrome: ${process.versions.chrome}</li>
         <li class="list-group-item">Electron: ${process.versions.electron}</li>
       </ul>
+
+      <h2 class="page-header">System specs</h2>
+      <ul class="list-group">
+        <li class="list-group-item">System architecture: ${process.arch}</li>
+        <li class="list-group-item">Processor identifier: ${process.env.PROCESSOR_IDENTIFIER}</li>
+        <li class="list-group-item">Printer: ${process.env.PRINTER}</li>
+      </ul>
+
+      <h2 class="page-header">System memory</h2>
+      <ul class="list-group">
+        <li class="list-group-item">Total: ${process.getSystemMemoryInfo().total}</li>
+        <li class="list-group-item">Free: ${process.getSystemMemoryInfo().free}</li>
+        <li class="list-group-item">Swap Total: ${process.getSystemMemoryInfo().swapTotal}</li>
+        <li class="list-group-item">Swap Free: ${process.getSystemMemoryInfo().swapFree}</li>
+      </ul>
+
+      <h2 class="page-header">Computer information</h2>
+      <ul class="list-group">
+        <li class="list-group-item">Computer name: ${process.env.USERDOMAIN}</li>
+        <li class="list-group-item">Username: ${process.env.USERNAME}</li>
+        <li class="list-group-item">User home path: ${process.env.HOME}</li>
+        <li class="list-group-item">System drive: ${process.env.SYSTEMDRIVE}</li>
+        <li class="list-group-item">System root: ${process.env.SYSTEMROOT}</li>
+      </ul>
     `;
 
     document.getElementById('output').innerHTML = output;
