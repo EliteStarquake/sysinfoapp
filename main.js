@@ -17,4 +17,18 @@ function createWindow(){
 
   // Open devtools
   win.webContents().openDevTools();
+
+  win.on('closed', () => {
+    win=null;
+  });
 }
+
+// Run create window function
+app.on('ready', createWindow);
+
+// Quit when all windows are closed
+app.on('window-all-closed', () => {
+  if(process.platform !== 'darwin'){
+    app.quit();
+  }
+});
